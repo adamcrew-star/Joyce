@@ -34,12 +34,13 @@
 .prp-lp nav.menu{display:flex;gap:26px;align-items:center}
 .prp-lp nav.menu a{font-family:'Montserrat';font-weight:700;font-size:14.5px;color:var(--navy)}
 .prp-lp nav.menu a:hover{color:var(--green)}
+.prp-lp .mobile-call-hdr{display:none}
 
 /* Hero */
 .prp-lp .hero{position:relative;background:linear-gradient(180deg,#eef5ef,#e3eee6);overflow:hidden}
 .prp-lp .hero:before{content:"";position:absolute;inset:0;background:
     linear-gradient(115deg,rgba(14,34,51,.93) 0 46%,rgba(14,34,51,.55) 60%,rgba(14,34,51,.25) 100%),
-    url('https://images.unsplash.com/photo-1632207691143-643d2a7e8340?auto=format&fit=crop&w=1600&q=80') center/cover}
+    url('https://pierceroofpros.com/wp-content/uploads/2025/01/down-net_http20241217-177-8pc44m-scaled.jpg') center/cover}
 .prp-lp .hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;padding:56px 22px 64px;align-items:center}
 .prp-lp .hero .copy{color:#eaf2f9}
 .prp-lp .hero h1{color:#fff;font-size:46px;font-weight:900;text-transform:uppercase;letter-spacing:.5px}
@@ -156,6 +157,12 @@
   .prp-lp footer.site .wrap{grid-template-columns:1fr}
   .prp-lp .strip .wrap{flex-direction:column;gap:12px}
   .prp-lp .topbar .wrap{justify-content:center;text-align:center}
+  .prp-lp header.main .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:nowrap;padding:8px 16px}
+  .prp-lp header.main .logo img{max-width:120px;object-fit:contain;height:40px!important;width:auto!important}
+  .prp-lp .mobile-call-hdr{display:inline-flex;align-items:center;gap:6px;background:var(--green);color:#fff;
+    padding:10px 16px;border-radius:30px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;
+    text-decoration:none;box-shadow:0 4px 12px rgba(46,171,46,.3);flex-shrink:0}
+  .prp-lp .mobile-call-hdr svg{width:16px;height:16px;fill:#fff}
 }
 @media(max-width:600px){
   .prp-lp .hero .wrap{padding:36px 16px 44px}
