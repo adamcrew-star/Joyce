@@ -102,9 +102,13 @@
 .prp-lp .why li .chk{width:26px;height:26px;font-size:14px}
 .prp-lp .why li b{display:block;color:var(--navy);font-family:'Montserrat';font-size:16px}
 .prp-lp .why li span{font-size:14px;color:var(--ink)}
+.prp-lp .google-badge{text-align:center;margin-top:16px}
+.prp-lp .google-badge img{display:block;margin:0 auto 6px}
+.prp-lp .google-rating{font-size:26px;font-family:'Montserrat',sans-serif}
+.prp-lp .google-rating b{margin-right:6px}
 .prp-lp .photo{border-radius:16px;min-height:340px;background:
     linear-gradient(0deg,rgba(14,34,51,.12),rgba(14,34,51,.12)),
-    url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80') center/cover;
+    url('https://pierceroofpros.com/wp-content/uploads/2025/01/down-net_http20241217-177-8pc44m-scaled.jpg') center/cover;
     box-shadow:0 18px 44px rgba(14,34,51,.18)}
 
 /* Steps */
