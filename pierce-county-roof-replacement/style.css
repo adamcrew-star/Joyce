@@ -5,7 +5,7 @@
   }
 .prp-lp *{box-sizing:border-box;margin:0;padding:0}
 .prp-lp{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
-.prp-lp img{max-width:100%;height:auto}
+.prp-lp img{max-width:100%;height:auto;object-fit:contain}
 .prp-lp h1,.prp-lp h2,.prp-lp h3,.prp-lp h4,.prp-lp h5{font-family:'Montserrat',sans-serif;color:var(--navy);line-height:1.12}
 .prp-lp a{color:inherit;text-decoration:none}
 .prp-lp .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
@@ -168,10 +168,11 @@
   .prp-lp .hero ul li{font-size:12.5px}
   .prp-lp .hero .pill{font-size:10.5px;letter-spacing:1px}
   .prp-lp .hero .cta-row{justify-content:center}
-  .prp-lp .hero .cta-row a.btn{width:auto!important;display:inline-flex!important;max-width:fit-content;
+  .prp-lp .cta-row a.btn{width:auto!important;display:inline-flex!important;max-width:fit-content;
     padding:13px 22px!important;font-size:16px!important}
-  .prp-lp .hero .cta-row .callbtn{background:var(--green);border:none;
+  .prp-lp .cta-row .callbtn{background:var(--green);border:none;
     color:#fff;box-shadow:0 6px 16px rgba(46,171,46,.32);width:auto!important;display:inline-flex!important}
+  .prp-lp .final .cta-row{justify-content:center}
   .prp-lp .trust{justify-content:center}
   .prp-lp footer.site .wrap{grid-template-columns:1fr}
   .prp-lp .strip .wrap{flex-direction:column;gap:12px}
