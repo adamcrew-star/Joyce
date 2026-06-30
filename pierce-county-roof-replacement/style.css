@@ -91,11 +91,13 @@
 
 /* Service cards grid */
 .prp-lp .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.prp-lp .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 22px;transition:.2s}
-.prp-lp .card:hover{box-shadow:0 14px 34px rgba(14,34,51,.10);transform:translateY(-3px)}
-.prp-lp .card .ico{width:52px;height:52px;border-radius:12px;background:#e6f6e6;color:var(--green);display:grid;place-items:center;font-size:24px;margin-bottom:14px}
-.prp-lp .card h3{font-size:18.5px;margin-bottom:8px}
-.prp-lp .card p{font-size:14.5px;color:var(--ink)}
+.prp-lp .card{position:relative;border-radius:14px;overflow:hidden;min-height:220px;
+    display:flex;flex-direction:column;justify-content:flex-end;padding:26px 22px;transition:.2s;
+    background-size:cover;background-position:center;background-repeat:no-repeat}
+.prp-lp .card::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(14,34,51,.82) 0%,rgba(14,34,51,.45) 100%);z-index:1}
+.prp-lp .card:hover{box-shadow:0 14px 34px rgba(14,34,51,.18);transform:translateY(-3px)}
+.prp-lp .card h3{font-size:18.5px;margin-bottom:8px;color:#fff;position:relative;z-index:2}
+.prp-lp .card p{font-size:14.5px;color:rgba(255,255,255,.88);position:relative;z-index:2}
 
 /* Why section */
 .prp-lp .why{background:var(--bg)}
