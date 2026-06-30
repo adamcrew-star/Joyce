@@ -50,7 +50,7 @@
 .prp-lp .hero p.sub{color:#d4e2ee;font-size:18px;margin:16px 0 22px;max-width:560px}
 .prp-lp .hero ul{list-style:none;display:grid;gap:9px;margin-bottom:24px}
 .prp-lp .hero ul li{display:flex;gap:10px;align-items:center;color:#eaf2f9;font-weight:600}
-.prp-lp .chk{width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:13px;flex:none}
+.prp-lp .chk{width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff!important;display:flex!important;align-items:center!important;justify-content:center!important;font-size:13px;flex:none;line-height:1}
 .prp-lp .hero .cta-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
 .prp-lp .callbtn{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);
     color:#fff;padding:13px 22px;border-radius:40px;font-family:'Montserrat';font-weight:800;font-size:16px}
@@ -104,7 +104,7 @@
 .prp-lp .why .row{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center}
 .prp-lp .why ul{list-style:none;display:grid;gap:16px;margin-top:8px}
 .prp-lp .why li{display:flex;gap:14px}
-.prp-lp .why li .chk{width:26px;height:26px;font-size:14px}
+.prp-lp .why li .chk{width:26px;height:26px;min-width:26px;min-height:26px;font-size:14px;display:flex!important;align-items:center!important;justify-content:center!important;color:#fff!important;line-height:1}
 .prp-lp .why li b{display:block;color:var(--navy);font-family:'Montserrat';font-size:16px}
 .prp-lp .why li span{font-size:14px;color:var(--ink);display:block;margin-top:2px}
 .prp-lp .google-badge{text-align:center;margin-top:16px}
