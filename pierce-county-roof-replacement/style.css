@@ -123,7 +123,7 @@
 .prp-lp .step .n{width:58px;height:58px;border-radius:50%;background:var(--navy);color:#fff;font-family:'Montserrat';font-weight:900;
     font-size:22px;display:grid;place-items:center;margin:0 auto 14px}
 .prp-lp .step h4{font-size:17px;margin-bottom:6px}
-.prp-lp .step p{font-size:13.5px;color:var(--muted)}
+.prp-lp .step p{font-size:15px;color:var(--muted)}
 
 /* Testimonials */
 .prp-lp .tg{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
