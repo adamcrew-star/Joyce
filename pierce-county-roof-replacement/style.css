@@ -104,7 +104,7 @@
 .prp-lp .why li{display:flex;gap:14px}
 .prp-lp .why li .chk{width:26px;height:26px;font-size:14px}
 .prp-lp .why li b{display:block;color:var(--navy);font-family:'Montserrat';font-size:16px}
-.prp-lp .why li span{font-size:14px;color:var(--ink)}
+.prp-lp .why li span{font-size:14px;color:var(--ink);display:block;margin-top:2px}
 .prp-lp .google-badge{text-align:center;margin-top:16px}
 .prp-lp .google-badge img{display:block;margin:0 auto 6px}
 .prp-lp .google-rating{font-size:26px;font-family:'Montserrat',sans-serif}
@@ -166,8 +166,10 @@
   .prp-lp .hero p.sub{font-size:18px}
   .prp-lp .hero ul{width:fit-content;margin:0 auto 24px}
   .prp-lp .hero ul li{font-size:12.5px}
+  .prp-lp .hero .pill{font-size:10.5px;letter-spacing:1px}
   .prp-lp .hero .cta-row{justify-content:center}
-  .prp-lp .hero .cta-row a.btn{width:auto!important;display:inline-flex!important}
+  .prp-lp .hero .cta-row a.btn{width:auto!important;display:inline-flex!important;max-width:fit-content;
+    padding:13px 22px!important;font-size:16px!important}
   .prp-lp .hero .cta-row .callbtn{background:var(--green);border:none;
     color:#fff;box-shadow:0 6px 16px rgba(46,171,46,.32);width:auto!important;display:inline-flex!important}
   .prp-lp .trust{justify-content:center}
