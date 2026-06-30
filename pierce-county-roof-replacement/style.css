@@ -184,7 +184,7 @@
 @media(max-width:600px){
   .prp-lp .hero .wrap{padding:36px 16px 44px}
   .prp-lp .formcard{padding:20px 16px}
-  .prp-lp .formcard h3{font-size:19px;margin:-20px -16px 16px}
+  .prp-lp .formcard h3{font-size:17px;margin:-20px -16px 16px;padding:16px}
   .prp-lp .sec-head h2{font-size:26px}
   .prp-lp .steps{grid-template-columns:1fr}
   .prp-lp .final h2{font-size:26px}
