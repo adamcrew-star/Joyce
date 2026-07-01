@@ -96,13 +96,21 @@
 .prp-lp .formcard .gform_wrapper .gfield_label{font-size:15px!important;font-weight:700!important;color:var(--navy)!important;margin-bottom:6px!important}
 .prp-lp .formcard .gform_wrapper .gfield{margin-bottom:10px!important;padding:0!important}
 .prp-lp .formcard .gform_wrapper .gform_fields{display:flex!important;flex-direction:column!important;gap:0!important;padding:0!important}
-.prp-lp .formcard .gform_wrapper .gform_footer,.prp-lp .formcard .gform_wrapper .gform_page_footer{padding:10px 0 0!important;width:100%!important;display:block!important}
-.prp-lp .formcard .gform_wrapper input[type="submit"],.prp-lp .formcard .gform_wrapper button[type="submit"]{
+.prp-lp .formcard .gform_wrapper .gform_footer,.prp-lp .formcard .gform_wrapper .gform_page_footer,
+.prp-lp .formcard .gform_wrapper .gform-footer{padding:10px 0 0!important;width:100%!important;display:block!important}
+.prp-lp .formcard .gform_wrapper input[type="submit"],
+.prp-lp .formcard .gform_wrapper button[type="submit"],
+.prp-lp .formcard .gform_wrapper .form__button,
+.prp-lp .formcard .gform_wrapper .gform-footer button,
+.prp-lp .formcard .gform_footer button{
     width:100%!important;background:var(--green)!important;color:#fff!important;font-family:'Montserrat',sans-serif!important;
     font-weight:800!important;font-size:16px!important;padding:16px 26px!important;border-radius:40px!important;border:0!important;
     cursor:pointer!important;box-shadow:0 6px 16px rgba(46,171,46,.32)!important;display:block!important;text-align:center!important;
     transition:.2s!important;letter-spacing:.5px!important}
-.prp-lp .formcard .gform_wrapper input[type="submit"]:hover,.prp-lp .formcard .gform_wrapper button[type="submit"]:hover{
+.prp-lp .formcard .gform_wrapper input[type="submit"]:hover,
+.prp-lp .formcard .gform_wrapper button[type="submit"]:hover,
+.prp-lp .formcard .gform_wrapper .form__button:hover,
+.prp-lp .formcard .gform_footer button:hover{
     background:var(--green-d)!important;transform:translateY(-1px)!important}
 
 /* Stats strip */
