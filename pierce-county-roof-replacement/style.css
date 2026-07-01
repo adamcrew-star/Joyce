@@ -79,10 +79,11 @@
 .prp-lp .formcard input:focus,.prp-lp .formcard textarea:focus,.prp-lp .formcard select:focus{outline:2px solid var(--green);border-color:var(--green)}
 .prp-lp .formcard .btn{width:100%;justify-content:center}
 .prp-lp .formcard .fine{display:none}
-.prp-lp .formcard .gfield--type-consent{display:block!important}
-.prp-lp .formcard .gfield_consent_label,.prp-lp .formcard .gfield_consent_description{font-size:10px!important;line-height:1.3!important;color:#777!important}
-.prp-lp .formcard .gfield--type-consent .ginput_container{display:flex!important;align-items:flex-start!important;gap:8px!important}
-.prp-lp .formcard .gfield--type-consent input[type="checkbox"]{width:16px!important;height:16px!important;min-width:16px!important;margin-top:2px!important}
+.prp-lp .formcard .gfield--type-consent{display:block!important;margin-top:6px!important}
+.prp-lp .formcard .gfield--type-consent .ginput_container{display:flex!important;flex-direction:row!important;align-items:flex-start!important;gap:8px!important;flex-wrap:nowrap!important}
+.prp-lp .formcard .gfield--type-consent input[type="checkbox"]{width:14px!important;height:14px!important;min-width:14px!important;margin-top:3px!important;flex-shrink:0!important}
+.prp-lp .formcard .gfield--type-consent .gfield_consent_label,
+.prp-lp .formcard .gfield--type-consent .gfield_consent_description{font-size:9.5px!important;line-height:1.35!important;color:#888!important;font-weight:400!important;margin:0!important}
 .prp-lp .formcard .gform_wrapper .gform_title{display:none!important}
 .prp-lp .formcard .gform_wrapper .gform_heading{display:none!important}
 .prp-lp .formcard .gform_wrapper,.prp-lp .formcard .gform_wrapper *{box-sizing:border-box!important}
