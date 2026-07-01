@@ -81,6 +81,7 @@
 .prp-lp .formcard .fine{font-size:11px;color:var(--muted);text-align:center;margin-top:10px}
 .prp-lp .formcard .gfield_consent_label,.prp-lp .formcard .gfield_consent_description,
 .prp-lp .formcard .gfield--type-consent{display:none!important}
+.prp-lp .formcard .gform_wrapper .gform_title{display:none!important}
 .prp-lp .formcard .gform_wrapper,.prp-lp .formcard .gform_wrapper *{box-sizing:border-box!important}
 .prp-lp .formcard .gform_wrapper{width:100%!important;max-width:100%!important}
 .prp-lp .formcard .gform_wrapper .gform_body,.prp-lp .formcard .gform_wrapper .gform_fields,
