@@ -78,9 +78,11 @@
     font-family:inherit;font-size:14.5px;margin-bottom:13px;background:#fafdfb}
 .prp-lp .formcard input:focus,.prp-lp .formcard textarea:focus,.prp-lp .formcard select:focus{outline:2px solid var(--green);border-color:var(--green)}
 .prp-lp .formcard .btn{width:100%;justify-content:center}
-.prp-lp .formcard .fine{font-size:11px;color:var(--muted);text-align:center;margin-top:10px}
-.prp-lp .formcard .gfield_consent_label,.prp-lp .formcard .gfield_consent_description,
-.prp-lp .formcard .gfield--type-consent{display:none!important}
+.prp-lp .formcard .fine{display:none}
+.prp-lp .formcard .gfield--type-consent{display:block!important}
+.prp-lp .formcard .gfield_consent_label,.prp-lp .formcard .gfield_consent_description{font-size:10px!important;line-height:1.3!important;color:#777!important}
+.prp-lp .formcard .gfield--type-consent .ginput_container{display:flex!important;align-items:flex-start!important;gap:8px!important}
+.prp-lp .formcard .gfield--type-consent input[type="checkbox"]{width:16px!important;height:16px!important;min-width:16px!important;margin-top:2px!important}
 .prp-lp .formcard .gform_wrapper .gform_title{display:none!important}
 .prp-lp .formcard .gform_wrapper .gform_heading{display:none!important}
 .prp-lp .formcard .gform_wrapper,.prp-lp .formcard .gform_wrapper *{box-sizing:border-box!important}
