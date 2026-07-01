@@ -199,9 +199,9 @@
 /* Responsive */
 @media(max-width:900px){
   .prp-lp .hero .wrap,.prp-lp .why .row{grid-template-columns:1fr}
-  .prp-lp .hero .copy-top{order:1}
+  .prp-lp .hero .copy-top{order:1;grid-column:1;grid-row:auto}
   .prp-lp .hero .formcard{order:2;grid-column:1;grid-row:auto}
-  .prp-lp .hero .copy-bottom{order:3}
+  .prp-lp .hero .copy-bottom{order:3;grid-column:1;grid-row:auto}
   .prp-lp .grid3,.prp-lp .tg{grid-template-columns:1fr}
   .prp-lp .steps{grid-template-columns:1fr 1fr}
   .prp-lp nav.menu{display:none}
