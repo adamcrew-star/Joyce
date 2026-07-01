@@ -116,6 +116,9 @@
 .prp-lp .formcard .gform_footer button:hover{
     background:var(--green-d)!important;transform:translateY(-1px)!important}
 
+/* Mobile mid-page CTA - hidden on desktop */
+.prp-lp .mobile-cta-mid{display:none}
+
 /* Stats strip */
 .prp-lp .strip{background:var(--green);color:#fff}
 .prp-lp .strip .wrap{display:flex;justify-content:space-around;gap:18px;padding:18px 22px;flex-wrap:wrap;text-align:center}
@@ -227,6 +230,7 @@
     padding:10px 16px;border-radius:30px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;
     text-decoration:none;box-shadow:0 6px 16px rgba(46,171,46,.32);flex-shrink:0}
   .prp-lp .mobile-call-hdr svg{width:16px;height:16px;fill:#fff}
+  .prp-lp .mobile-cta-mid{display:block}
 }
 @media(max-width:600px){
   .prp-lp .hero .wrap{padding:36px 16px 44px}
