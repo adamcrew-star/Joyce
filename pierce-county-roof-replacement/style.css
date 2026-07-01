@@ -78,6 +78,28 @@
 .prp-lp .formcard .fine{font-size:11px;color:var(--muted);text-align:center;margin-top:10px}
 .prp-lp .formcard .gfield_consent_label,.prp-lp .formcard .gfield_consent_description,
 .prp-lp .formcard .gfield--type-consent{display:none!important}
+.prp-lp .formcard .gform_wrapper,.prp-lp .formcard .gform_wrapper *{box-sizing:border-box!important}
+.prp-lp .formcard .gform_wrapper{width:100%!important;max-width:100%!important}
+.prp-lp .formcard .gform_wrapper .gform_body,.prp-lp .formcard .gform_wrapper .gform_fields,
+.prp-lp .formcard .gform_wrapper .gfield,.prp-lp .formcard .gform_wrapper .ginput_container,
+.prp-lp .formcard .gform_wrapper .ginput_container input,
+.prp-lp .formcard .gform_wrapper .ginput_container select,
+.prp-lp .formcard .gform_wrapper .ginput_container textarea{width:100%!important;max-width:100%!important}
+.prp-lp .formcard .gform_wrapper input:not([type="submit"]):not([type="hidden"]):not([type="checkbox"]):not([type="radio"]),
+.prp-lp .formcard .gform_wrapper select,
+.prp-lp .formcard .gform_wrapper textarea{width:100%!important;padding:14px 16px!important;
+    border:1.5px solid #d8e1da!important;border-radius:10px!important;font-family:inherit!important;
+    font-size:15px!important;background:#fff!important;margin-bottom:4px!important}
+.prp-lp .formcard .gform_wrapper input:focus,.prp-lp .formcard .gform_wrapper textarea:focus,
+.prp-lp .formcard .gform_wrapper select:focus{outline:2px solid var(--green)!important;border-color:var(--green)!important}
+.prp-lp .formcard .gform_wrapper .gfield_label{font-size:15px!important;font-weight:700!important;color:var(--navy)!important;margin-bottom:6px!important}
+.prp-lp .formcard .gform_wrapper .gfield{margin-bottom:10px!important;padding:0!important}
+.prp-lp .formcard .gform_wrapper .gform_fields{display:flex!important;flex-direction:column!important;gap:0!important;padding:0!important}
+.prp-lp .formcard .gform_wrapper .gform_footer,.prp-lp .formcard .gform_wrapper .gform_page_footer{padding:10px 0 0!important;width:100%!important}
+.prp-lp .formcard .gform_wrapper input[type="submit"],.prp-lp .formcard .gform_wrapper button[type="submit"]{
+    width:100%!important;background:var(--green)!important;color:#fff!important;font-family:'Montserrat',sans-serif!important;
+    font-weight:800!important;font-size:16px!important;padding:16px 26px!important;border-radius:40px!important;border:0!important;
+    cursor:pointer!important;box-shadow:0 6px 16px rgba(46,171,46,.32)!important}
 
 /* Stats strip */
 .prp-lp .strip{background:var(--green);color:#fff}
