@@ -76,6 +76,8 @@
 .prp-lp .formcard input:focus,.prp-lp .formcard textarea:focus,.prp-lp .formcard select:focus{outline:2px solid var(--green);border-color:var(--green)}
 .prp-lp .formcard .btn{width:100%;justify-content:center}
 .prp-lp .formcard .fine{font-size:11px;color:var(--muted);text-align:center;margin-top:10px}
+.prp-lp .formcard .gfield_consent_label,.prp-lp .formcard .gfield_consent_description,
+.prp-lp .formcard .gfield--type-consent{display:none!important}
 
 /* Stats strip */
 .prp-lp .strip{background:var(--green);color:#fff}
