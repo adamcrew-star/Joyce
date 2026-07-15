@@ -28,19 +28,19 @@
         <p class="intro">Your feedback helps our local team keep raising the roof on great service.</p>
 
         <div class="rating-grid" role="group" aria-label="Choose your experience rating">
-          <button class="rating-option" type="button" data-rating="Excellent" data-emoji="😄">
+          <button class="rating-option" type="button" data-rating="Excellent">
             <span class="emoji-wrap"><span class="emoji" aria-hidden="true">😄</span></span>
             <span class="rating-label">Excellent</span>
           </button>
-          <button class="rating-option" type="button" data-rating="Good" data-emoji="🙂">
+          <button class="rating-option" type="button" data-rating="Good">
             <span class="emoji-wrap"><span class="emoji" aria-hidden="true">🙂</span></span>
             <span class="rating-label">Good</span>
           </button>
-          <button class="rating-option" type="button" data-rating="Okay" data-emoji="😐">
+          <button class="rating-option" type="button" data-rating="Okay">
             <span class="emoji-wrap"><span class="emoji" aria-hidden="true">😐</span></span>
             <span class="rating-label">Okay</span>
           </button>
-          <button class="rating-option" type="button" data-rating="Not great" data-emoji="🙁">
+          <button class="rating-option" type="button" data-rating="Not great">
             <span class="emoji-wrap"><span class="emoji" aria-hidden="true">🙁</span></span>
             <span class="rating-label">Not great</span>
           </button>
@@ -48,78 +48,11 @@
 
         <p class="privacy-note">
           <svg aria-hidden="true" viewBox="0 0 24 24">
-            <path d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5Zm-3 8V7a3 3 0 0 1 6 0v3H9Z"/>
+            <path d="M5 12h14m-5-5 5 5-5 5"/>
           </svg>
-          Nothing is posted automatically. You choose what to share.
+          You’ll continue to Google to write and submit your review.
         </p>
-      </section>
-
-      <section id="share-step" class="step" hidden>
-        <button id="back-button" class="back-button" type="button">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m15.5 5-7 7 7 7"/></svg>
-          Change rating
-        </button>
-
-        <div class="result-heading">
-          <span id="selected-emoji" class="selected-emoji" aria-hidden="true"></span>
-          <div>
-            <div class="eyebrow">Thank you for your feedback</div>
-            <h2 id="response-title">We appreciate you.</h2>
-          </div>
-        </div>
-        <p class="result-intro">Choose how you would like to share your experience.</p>
-
-        <div class="share-options">
-          <article class="share-panel google-panel">
-            <div class="panel-icon google-icon" aria-hidden="true">G</div>
-            <div class="panel-copy">
-              <h3>Share a Google review</h3>
-              <p>Your review helps Kitsap County homeowners find a roofer they can trust.</p>
-            </div>
-            <label for="review-draft">Draft your review <span>(optional)</span></label>
-            <textarea id="review-draft" rows="4" placeholder="What stood out about your experience?"></textarea>
-            <a
-              id="google-review-button"
-              class="primary-button"
-              href="https://g.page/r/CdXw4tNKYRNhEBM/review"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span id="google-button-label">Continue to Google</span>
-              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></svg>
-            </a>
-            <p id="copy-status" class="action-status" aria-live="polite"></p>
-          </article>
-
-          <article class="share-panel feedback-panel">
-            <div class="panel-icon feedback-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M20 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h9a4 4 0 0 1 4 4v8Z"/></svg>
-            </div>
-            <div class="panel-copy">
-              <h3>Send feedback directly</h3>
-              <p>Tell our team what went well or what we can do better.</p>
-            </div>
-            <form id="feedback-form">
-              <label for="feedback-message">Your feedback</label>
-              <textarea id="feedback-message" name="feedback" rows="4" placeholder="Share a few details with our team..." required></textarea>
-              <div class="field-row">
-                <div>
-                  <label for="customer-name">Name <span>(optional)</span></label>
-                  <input id="customer-name" name="name" type="text" autocomplete="name" placeholder="Your name">
-                </div>
-                <div>
-                  <label for="customer-email">Email <span>(optional)</span></label>
-                  <input id="customer-email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
-                </div>
-              </div>
-              <button class="secondary-button" type="submit">
-                Email our team
-                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m4 4 16 8-16 8 3-8-3-8Zm3 8h13"/></svg>
-              </button>
-              <p id="feedback-status" class="action-status" aria-live="polite"></p>
-            </form>
-          </article>
-        </div>
+        <p id="redirect-status" class="redirect-status" aria-live="polite"></p>
       </section>
 
       <footer>
