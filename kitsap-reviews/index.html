@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102b3b">
+  <meta name="description" content="Share feedback about your experience with Kitsap Roof Pros.">
+  <title>Share Your Experience | Kitsap Roof Pros</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <div class="roof-lines" aria-hidden="true"></div>
+
+    <main class="review-card">
+      <header class="brand">
+        <a href="https://kitsaproofpros.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Kitsap Roof Pros">
+          <img src="logo.png" alt="Kitsap Roof Pros">
+        </a>
+      </header>
+
+      <section id="rating-step" class="step">
+        <div class="eyebrow">We value your feedback</div>
+        <h1>How was your experience with Kitsap Roof Pros?</h1>
+        <p class="intro">Your feedback helps our local team keep raising the roof on great service.</p>
+
+        <div class="rating-grid" role="group" aria-label="Choose your experience rating">
+          <button class="rating-option" type="button" data-rating="Excellent" data-emoji="😄">
+            <span class="emoji-wrap"><span class="emoji" aria-hidden="true">😄</span></span>
+            <span class="rating-label">Excellent</span>
+          </button>
+          <button class="rating-option" type="button" data-rating="Good" data-emoji="🙂">
+            <span class="emoji-wrap"><span class="emoji" aria-hidden="true">🙂</span></span>
+            <span class="rating-label">Good</span>
+          </button>
+          <button class="rating-option" type="button" data-rating="Okay" data-emoji="😐">
+            <span class="emoji-wrap"><span class="emoji" aria-hidden="true">😐</span></span>
+            <span class="rating-label">Okay</span>
+          </button>
+          <button class="rating-option" type="button" data-rating="Not great" data-emoji="🙁">
+            <span class="emoji-wrap"><span class="emoji" aria-hidden="true">🙁</span></span>
+            <span class="rating-label">Not great</span>
+          </button>
+        </div>
+
+        <p class="privacy-note">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5Zm-3 8V7a3 3 0 0 1 6 0v3H9Z"/>
+          </svg>
+          Nothing is posted automatically. You choose what to share.
+        </p>
+      </section>
+
+      <section id="share-step" class="step" hidden>
+        <button id="back-button" class="back-button" type="button">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m15.5 5-7 7 7 7"/></svg>
+          Change rating
+        </button>
+
+        <div class="result-heading">
+          <span id="selected-emoji" class="selected-emoji" aria-hidden="true"></span>
+          <div>
+            <div class="eyebrow">Thank you for your feedback</div>
+            <h2 id="response-title">We appreciate you.</h2>
+          </div>
+        </div>
+        <p class="result-intro">Choose how you would like to share your experience.</p>
+
+        <div class="share-options">
+          <article class="share-panel google-panel">
+            <div class="panel-icon google-icon" aria-hidden="true">G</div>
+            <div class="panel-copy">
+              <h3>Share a Google review</h3>
+              <p>Your review helps Kitsap County homeowners find a roofer they can trust.</p>
+            </div>
+            <label for="review-draft">Draft your review <span>(optional)</span></label>
+            <textarea id="review-draft" rows="4" placeholder="What stood out about your experience?"></textarea>
+            <a
+              id="google-review-button"
+              class="primary-button"
+              href="https://g.page/r/CdXw4tNKYRNhEBM/review"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span id="google-button-label">Continue to Google</span>
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></svg>
+            </a>
+            <p id="copy-status" class="action-status" aria-live="polite"></p>
+          </article>
+
+          <article class="share-panel feedback-panel">
+            <div class="panel-icon feedback-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M20 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h9a4 4 0 0 1 4 4v8Z"/></svg>
+            </div>
+            <div class="panel-copy">
+              <h3>Send feedback directly</h3>
+              <p>Tell our team what went well or what we can do better.</p>
+            </div>
+            <form id="feedback-form">
+              <label for="feedback-message">Your feedback</label>
+              <textarea id="feedback-message" name="feedback" rows="4" placeholder="Share a few details with our team..." required></textarea>
+              <div class="field-row">
+                <div>
+                  <label for="customer-name">Name <span>(optional)</span></label>
+                  <input id="customer-name" name="name" type="text" autocomplete="name" placeholder="Your name">
+                </div>
+                <div>
+                  <label for="customer-email">Email <span>(optional)</span></label>
+                  <input id="customer-email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+                </div>
+              </div>
+              <button class="secondary-button" type="submit">
+                Email our team
+                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m4 4 16 8-16 8 3-8-3-8Zm3 8h13"/></svg>
+              </button>
+              <p id="feedback-status" class="action-status" aria-live="polite"></p>
+            </form>
+          </article>
+        </div>
+      </section>
+
+      <footer>
+        <span>Locally owned and serving Kitsap County</span>
+        <span class="footer-separator" aria-hidden="true">•</span>
+        <a href="tel:+13609190732">(360) 919-0732</a>
+        <span class="footer-separator" aria-hidden="true">•</span>
+        <a href="https://kitsaproofpros.com/" target="_blank" rel="noopener noreferrer">kitsaproofpros.com</a>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
