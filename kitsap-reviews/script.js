@@ -1,14 +1,26 @@
-const googleReviewUrl = "https://g.page/r/CdXw4tNKYRNhEBM/review";
 const ratingButtons = document.querySelectorAll(".rating-option");
-const redirectStatus = document.querySelector("#redirect-status");
+const ratingStep = document.querySelector("#rating-step");
+const platformStep = document.querySelector("#platform-step");
+const backButton = document.querySelector("#back-button");
+
+function showPlatformStep() {
+  ratingStep.hidden = true;
+  platformStep.hidden = false;
+  platformStep.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
+function showRatingStep() {
+  platformStep.hidden = true;
+  ratingStep.hidden = false;
+  ratingButtons.forEach((button) => button.classList.remove("is-selected"));
+}
 
 ratingButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    ratingButtons.forEach((ratingButton) => {
-      ratingButton.disabled = true;
-    });
+    ratingButtons.forEach((ratingButton) => ratingButton.classList.remove("is-selected"));
     button.classList.add("is-selected");
-    redirectStatus.textContent = "Opening Google Reviews…";
-    window.location.assign(googleReviewUrl);
+    showPlatformStep();
   });
 });
+
+backButton.addEventListener("click", showRatingStep);
