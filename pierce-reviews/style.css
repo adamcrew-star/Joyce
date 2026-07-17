@@ -506,7 +506,7 @@ footer a:hover {
   stroke-width: 2;
 }
 
-#platform-step {
+#platform-step:not([hidden]) {
   display: flex;
   flex-direction: column;
 }
