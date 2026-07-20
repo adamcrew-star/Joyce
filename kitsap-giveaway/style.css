@@ -141,7 +141,7 @@ a {
   text-transform: uppercase;
 }
 
-#entry-step {
+#entry-step:not([hidden]) {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -218,12 +218,6 @@ h1 {
   gap: 15px;
 }
 
-.field-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-}
-
 .field {
   display: flex;
   flex-direction: column;
@@ -266,6 +260,60 @@ h1 {
 .field input.invalid {
   border-color: #d64545;
   background: #fdf2f2;
+}
+
+.interests {
+  margin: 2px 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.interests legend {
+  padding: 0;
+  margin-bottom: 9px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.interest {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 13px;
+  border: 2px solid var(--line);
+  border-radius: 11px;
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease;
+}
+
+.interest input {
+  flex: none;
+  width: 17px;
+  height: 17px;
+  accent-color: var(--green);
+}
+
+.interest:hover,
+.interest:focus-within {
+  border-color: var(--green);
+  background: var(--green-soft);
+}
+
+.interest:has(input:checked) {
+  border-color: var(--green);
+  background: var(--green-soft);
 }
 
 .consent {
@@ -354,6 +402,23 @@ h1 {
   color: var(--green-dark);
 }
 
+.consent strong {
+  color: var(--navy);
+  font-weight: 800;
+}
+
+.asterisk {
+  color: var(--green-dark);
+  font-weight: 800;
+}
+
+.fine-print {
+  margin: 0;
+  color: #93a1a8;
+  font-size: 11px;
+  text-align: center;
+}
+
 .privacy-note {
   display: flex;
   justify-content: center;
@@ -375,7 +440,7 @@ h1 {
   stroke-width: 2;
 }
 
-#success-step {
+#success-step:not([hidden]) {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -498,7 +563,7 @@ footer a:hover {
 }
 
 @media (max-width: 430px) {
-  .field-row {
+  .interests-grid {
     grid-template-columns: 1fr;
   }
 

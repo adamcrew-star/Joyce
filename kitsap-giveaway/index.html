@@ -53,30 +53,39 @@
         </ul>
 
         <form id="giveaway-form" class="giveaway-form" novalidate>
-          <div class="field-row">
-            <div class="field">
-              <label for="fname">First name</label>
-              <input id="fname" name="fname" type="text" autocomplete="given-name" placeholder="Jane" required>
-            </div>
-            <div class="field">
-              <label for="lname">Last name</label>
-              <input id="lname" name="lname" type="text" autocomplete="family-name" placeholder="Doe" required>
-            </div>
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" placeholder="Jane Doe" required>
           </div>
 
           <div class="field">
-            <label for="email">Email address</label>
+            <label for="email">Email</label>
             <input id="email" name="email" type="email" autocomplete="email" placeholder="jane@example.com" required>
           </div>
 
           <div class="field">
-            <label for="phone">Phone <span class="optional">(optional)</span></label>
-            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(360) 555-0199">
+            <label for="address">Address</label>
+            <input id="address" name="address" type="text" autocomplete="street-address" placeholder="304 White Pine Dr, Bremerton, WA" required>
           </div>
+
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(360) 555-0199" required>
+          </div>
+
+          <fieldset class="interests">
+            <legend>Interested in</legend>
+            <div class="interests-grid">
+              <label class="interest"><input type="checkbox" name="interest" value="Re-roof"><span>Re-roof</span></label>
+              <label class="interest"><input type="checkbox" name="interest" value="Roof Repair"><span>Roof Repair</span></label>
+              <label class="interest"><input type="checkbox" name="interest" value="General Construction"><span>General Construction</span></label>
+              <label class="interest"><input type="checkbox" name="interest" value="Windows"><span>Windows</span></label>
+            </div>
+          </fieldset>
 
           <label class="consent">
             <input id="consent" name="consent" type="checkbox" required>
-            <span>Yes, enter me in the giveaway and keep me posted with roofing tips &amp; offers from Kitsap Roof Pros.</span>
+            <span><strong>YES! I want a free roof.</strong><span class="asterisk">*</span> Enter me in the giveaway and keep me posted with offers from Kitsap Roof Pros.</span>
           </label>
 
           <!-- Mailchimp anti-bot honeypot field: do not remove, and keep it hidden from users. -->
@@ -91,6 +100,7 @@
           </button>
 
           <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+          <p class="fine-print">*Exclusions and limitations apply.</p>
         </form>
 
         <p class="privacy-note">
