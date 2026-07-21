@@ -316,6 +316,10 @@ h1 {
   background: var(--green-soft);
 }
 
+.interest-wide {
+  grid-column: 1 / -1;
+}
+
 .consent {
   display: flex;
   align-items: flex-start;
