@@ -88,9 +88,9 @@ function validate() {
  */
 function submitToMailchimp() {
   const { first, last } = splitName(fields.name.value);
-  const interests = Array.from(document.querySelectorAll('input[name="interest"]:checked'))
-    .map((box) => box.value)
-    .join(", ");
+  const checked = Array.from(document.querySelectorAll('input[name="interest"]:checked'));
+  const interests = checked.map((box) => box.value).join(", ");
+  const tags = checked.map((box) => box.dataset.tag).filter(Boolean).join(",");
 
   const params = new URLSearchParams();
   params.set("EMAIL", fields.email.value.trim());
@@ -99,6 +99,8 @@ function submitToMailchimp() {
   params.set("ADDR", fields.address.value.trim());
   params.set("PHONE", fields.phone.value.trim());
   params.set("INTEREST", interests);
+  // Apply a Mailchimp tag per selected checkbox (comma-separated tag IDs).
+  params.set("tags", tags);
   // Mailchimp bot-detection honeypot: named b_<u>_<id>, must stay empty.
   params.set("b_" + MAILCHIMP.u + "_" + MAILCHIMP.id, honeypot.value);
 
