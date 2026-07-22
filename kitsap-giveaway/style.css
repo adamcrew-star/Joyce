@@ -518,7 +518,8 @@ h1 {
 .fine-print {
   margin: 0;
   color: #93a1a8;
-  font-size: 11px;
+  font-size: 10.5px;
+  line-height: 1.5;
   text-align: center;
 }
 
