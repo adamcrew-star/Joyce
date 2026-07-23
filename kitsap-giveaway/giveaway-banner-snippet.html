@@ -1,0 +1,74 @@
+<!-- ============================================================= -->
+<!-- Kitsap Roof Pros — Giveaway homepage banner                   -->
+<!-- Paste this whole block into your homepage (Custom HTML block) -->
+<!-- or a Header/Footer-scripts plugin (e.g. WPCode). Scoped so    -->
+<!-- it won't affect the rest of your theme.                       -->
+<!-- ============================================================= -->
+<div id="krp-giveaway-banner" role="region" aria-label="Roof giveaway announcement">
+  <a class="krp-gb-link" href="https://giveaway.kitsaproofpros.com/" target="_blank" rel="noopener noreferrer">
+    <span class="krp-gb-badge">🎁 GIVEAWAY</span>
+    <span class="krp-gb-text">
+      <strong>Win a FREE Roof Makeover</strong>
+      <span class="krp-gb-sub">Kitsap Roof Pros &times; Kitsap Fair &amp; Stampede &middot; Enter by Aug 30</span>
+    </span>
+    <span class="krp-gb-cta">Enter now &rarr;</span>
+  </a>
+  <button type="button" class="krp-gb-close" aria-label="Dismiss giveaway banner">&times;</button>
+</div>
+
+<style>
+  #krp-giveaway-banner{
+    display:flex;align-items:center;justify-content:center;gap:12px;
+    position:relative;width:100%;box-sizing:border-box;
+    padding:10px 44px 10px 16px;
+    background:linear-gradient(90deg,#348c20,#43b02a);
+    color:#fff;font-family:'Inter',Arial,Helvetica,sans-serif;
+    box-shadow:0 2px 10px rgba(0,0,0,.18);z-index:9999;
+  }
+  #krp-giveaway-banner.krp-gb-hidden{display:none;}
+  #krp-giveaway-banner .krp-gb-link{
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;
+    text-decoration:none;color:#fff;
+  }
+  #krp-giveaway-banner .krp-gb-badge{
+    font-weight:800;font-size:12px;letter-spacing:.06em;
+    background:rgba(255,255,255,.18);border-radius:999px;padding:4px 12px;white-space:nowrap;
+  }
+  #krp-giveaway-banner .krp-gb-text{display:flex;flex-direction:column;line-height:1.25;}
+  #krp-giveaway-banner .krp-gb-text strong{font-size:16px;font-weight:800;}
+  #krp-giveaway-banner .krp-gb-sub{font-size:12.5px;opacity:.92;}
+  #krp-giveaway-banner .krp-gb-cta{
+    font-weight:700;font-size:14px;background:#fff;color:#348c20;
+    border-radius:999px;padding:7px 16px;white-space:nowrap;
+  }
+  #krp-giveaway-banner .krp-gb-close{
+    position:absolute;top:50%;right:12px;transform:translateY(-50%);
+    background:transparent;border:0;color:#fff;font-size:24px;line-height:1;
+    cursor:pointer;opacity:.85;padding:0 4px;
+  }
+  #krp-giveaway-banner .krp-gb-close:hover{opacity:1;}
+  @media (max-width:640px){
+    #krp-giveaway-banner{padding:9px 40px 9px 12px;}
+    #krp-giveaway-banner .krp-gb-link{gap:8px;}
+    #krp-giveaway-banner .krp-gb-text strong{font-size:14px;}
+    #krp-giveaway-banner .krp-gb-sub{font-size:11px;}
+    #krp-giveaway-banner .krp-gb-cta{font-size:12.5px;padding:6px 12px;}
+  }
+</style>
+
+<script>
+  (function(){
+    var banner = document.getElementById('krp-giveaway-banner');
+    if(!banner) return;
+    // Hide after the giveaway ends (Aug 30, 2026 9:00 PM PT)
+    if(Date.now() > new Date('2026-08-30T21:00:00-07:00').getTime()){
+      banner.classList.add('krp-gb-hidden'); return;
+    }
+    // Respect a prior dismissal for this browser
+    try{ if(localStorage.getItem('krpGiveawayBannerClosed')==='1'){ banner.classList.add('krp-gb-hidden'); return; } }catch(e){}
+    banner.querySelector('.krp-gb-close').addEventListener('click', function(){
+      banner.classList.add('krp-gb-hidden');
+      try{ localStorage.setItem('krpGiveawayBannerClosed','1'); }catch(e){}
+    });
+  })();
+</script>
