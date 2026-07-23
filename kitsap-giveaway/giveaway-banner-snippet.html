@@ -51,11 +51,18 @@
   }
   #krp-giveaway-banner .krp-gb-close:hover{opacity:1;}
   @media (max-width:640px){
-    #krp-giveaway-banner{padding:9px 40px 9px 12px;}
-    #krp-giveaway-banner .krp-gb-link{gap:8px;}
-    #krp-giveaway-banner .krp-gb-text strong{font-size:14px;}
-    #krp-giveaway-banner .krp-gb-sub{font-size:11px;}
-    #krp-giveaway-banner .krp-gb-cta{font-size:12.5px;padding:6px 12px;}
+    #krp-giveaway-banner{padding:14px 16px 16px;}
+    #krp-giveaway-banner .krp-gb-link{
+      flex-direction:column;gap:8px;width:100%;text-align:center;
+    }
+    #krp-giveaway-banner .krp-gb-badge{font-size:11px;padding:4px 12px;}
+    #krp-giveaway-banner .krp-gb-text{align-items:center;}
+    #krp-giveaway-banner .krp-gb-text strong{font-size:21px;letter-spacing:.01em;}
+    #krp-giveaway-banner .krp-gb-sub{font-size:12.5px;margin-top:2px;}
+    #krp-giveaway-banner .krp-gb-cta{
+      font-size:15px;padding:11px 22px;margin-top:4px;width:auto;
+    }
+    #krp-giveaway-banner .krp-gb-close{top:8px;right:10px;transform:none;font-size:26px;}
   }
 </style>
 
