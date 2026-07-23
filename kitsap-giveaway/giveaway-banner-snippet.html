@@ -68,42 +68,51 @@
 
 <script>
   (function(){
-    var banner = document.getElementById('krp-giveaway-banner');
-    if(!banner) return;
+    function init(){
+      var banner = document.getElementById('krp-giveaway-banner');
+      if(!banner) return;
 
-    // The site header is position:fixed with a hardcoded top offset, so it
-    // floats over the banner. Keep the header pinned directly below the banner
-    // at rest, and let it slide up to the very top of the page as you scroll.
-    var header = document.querySelector('#masthead, header.site-header');
-    function syncHeader(){
-      if(!header) return;
-      var top = 0;
-      if(!banner.classList.contains('krp-gb-hidden')){
-        top = Math.max(0, Math.round(banner.getBoundingClientRect().bottom));
+      // The site header is position:fixed with a hardcoded top offset, so it
+      // floats over the banner. Keep the header pinned directly below the banner
+      // at rest, and let it slide up to the very top of the page as you scroll.
+      var header = document.querySelector('#masthead, header.site-header');
+      function syncHeader(){
+        if(!header) return;
+        var top = 0;
+        if(!banner.classList.contains('krp-gb-hidden')){
+          top = Math.max(0, Math.round(banner.getBoundingClientRect().bottom));
+        }
+        header.style.setProperty('top', top + 'px', 'important');
       }
-      header.style.setProperty('top', top + 'px', 'important');
-    }
 
-    function hideBanner(){
-      banner.classList.add('krp-gb-hidden');
+      function hideBanner(){
+        banner.classList.add('krp-gb-hidden');
+        syncHeader();
+      }
+
+      // Hide after the giveaway ends (Aug 30, 2026 9:00 PM PT)
+      if(Date.now() > new Date('2026-08-30T21:00:00-07:00').getTime()){
+        hideBanner(); return;
+      }
+      // Respect a prior dismissal for this browser
+      try{ if(localStorage.getItem('krpGiveawayBannerClosed')==='1'){ hideBanner(); return; } }catch(e){}
+
+      banner.querySelector('.krp-gb-close').addEventListener('click', function(){
+        hideBanner();
+        try{ localStorage.setItem('krpGiveawayBannerClosed','1'); }catch(e){}
+      });
+
       syncHeader();
+      window.addEventListener('scroll', syncHeader, {passive:true});
+      window.addEventListener('resize', syncHeader);
+      window.addEventListener('load', syncHeader);
     }
 
-    // Hide after the giveaway ends (Aug 30, 2026 9:00 PM PT)
-    if(Date.now() > new Date('2026-08-30T21:00:00-07:00').getTime()){
-      hideBanner(); return;
+    // The snippet may load in <head> (before the banner exists), so defer.
+    if(document.readyState === 'loading'){
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
     }
-    // Respect a prior dismissal for this browser
-    try{ if(localStorage.getItem('krpGiveawayBannerClosed')==='1'){ hideBanner(); return; } }catch(e){}
-
-    banner.querySelector('.krp-gb-close').addEventListener('click', function(){
-      hideBanner();
-      try{ localStorage.setItem('krpGiveawayBannerClosed','1'); }catch(e){}
-    });
-
-    syncHeader();
-    window.addEventListener('scroll', syncHeader, {passive:true});
-    window.addEventListener('resize', syncHeader);
-    window.addEventListener('load', syncHeader);
   })();
 </script>
