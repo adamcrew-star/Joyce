@@ -57,20 +57,53 @@
   header.site-header .site-header__inner .menu-toggle{
     background: transparent !important;
     box-shadow: none !important;
+    font-size: 0 !important;            /* hide the "Menu" label */
+    gap: 0 !important;
+  }
+  /* Clean 3-line green hamburger. */
+  header.site-header .site-header__inner .menu-toggle .hamburger{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: 5px !important;
   }
   header.site-header .site-header__inner .hamburger__line,
   header.site-header .site-header__inner .menu-toggle span{
+    display: block !important;
+    width: 26px !important;
+    height: 3px !important;
+    border-radius: 2px !important;
     background: #1c7a3f !important;
   }
 
   /* Remove the now-empty floating bottom bar. */
   header.site-header + div{ display: none !important; }
+
+  /* Insurance-step cards: full width on mobile (no narrow centered column). */
+  .process .col-process{
+    width: 100% !important;
+    max-width: 100% !important;
+    align-self: stretch !important;
+  }
 }
 
 /* Desktop keeps its own nav; hide the relocated mobile controls. */
 @media (min-width: 992px){
   header.site-header .site-header__inner > .menu-toggle,
   header.site-header .site-header__inner > a[href^="tel"]{ display: none !important; }
+
+  /* Keep the logo fully visible in the header (was clipping at the top). */
+  header.site-header .site-header__inner{ align-items: center !important; }
+  header.site-header .site-header__inner > a[href="https://kitsaproofpros.com/"]{
+    display: flex !important;
+    align-items: center !important;
+  }
+  header.site-header .site-header__inner > a[href="https://kitsaproofpros.com/"] img{
+    max-height: 70px !important;
+    height: auto !important;
+    width: auto !important;
+    object-fit: contain !important;
+  }
 }
 </style>
 <script>
@@ -88,6 +121,17 @@
     // Relocate the mobile controls into the header row (once).
     if(menuBtn && menuBtn.parentElement !== inner){ inner.insertBefore(menuBtn, inner.firstChild); }
     if(phone && phone.parentElement !== inner){ inner.appendChild(phone); }
+
+    // Show "Call Now" instead of the phone number (keep the icon + tel link).
+    if(phone){
+      var replaced = false;
+      Array.prototype.forEach.call(phone.childNodes, function(n){
+        if(n.nodeType === 3 && n.textContent.trim()){
+          n.textContent = replaced ? '' : ' Call Now';
+          replaced = true;
+        }
+      });
+    }
   }
 
   if(document.readyState === 'loading'){
