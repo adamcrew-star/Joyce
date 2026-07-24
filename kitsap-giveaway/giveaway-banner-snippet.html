@@ -76,6 +76,11 @@
       // floats over the banner. Keep the header pinned directly below the banner
       // at rest, and let it slide up to the very top of the page as you scroll.
       var header = document.querySelector('#masthead, header.site-header');
+      // The homepage hero reserves ~132px padding-top to clear the old
+      // top:40px fixed header. The header is shorter than that, leaving a
+      // white gap below it, so tighten the clearance to the real header height.
+      var isHome = location.pathname === '/' || location.pathname === '';
+      var heroSection = isHome ? document.querySelector('main > section') : null;
       function syncHeader(){
         if(!header) return;
         var top = 0;
@@ -83,6 +88,9 @@
           top = Math.max(0, Math.round(banner.getBoundingClientRect().bottom));
         }
         header.style.setProperty('top', top + 'px', 'important');
+        if(heroSection){
+          heroSection.style.setProperty('padding-top', (header.offsetHeight + 8) + 'px', 'important');
+        }
       }
 
       function hideBanner(){
