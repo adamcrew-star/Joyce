@@ -112,7 +112,8 @@ a {
 
 .brand img {
   width: auto;
-  height: 66px;
+  height: 96px;
+  border-radius: 12px;
   object-fit: contain;
 }
 
@@ -316,7 +317,7 @@ footer a:hover {
   }
 
   .brand img {
-    height: 55px;
+    height: 78px;
   }
 
   .step {
