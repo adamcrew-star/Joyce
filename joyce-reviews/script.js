@@ -2,6 +2,13 @@ const ratingButtons = document.querySelectorAll(".rating-option");
 const ratingStep = document.querySelector("#rating-step");
 const platformStep = document.querySelector("#platform-step");
 const backButton = document.querySelector("#back-button");
+const platformLinks = document.querySelectorAll(".platform-option");
+
+function track(name, params) {
+  if (typeof window.gtag === "function") {
+    window.gtag("event", name, params);
+  }
+}
 
 function showPlatformStep() {
   ratingStep.hidden = true;
@@ -19,8 +26,16 @@ ratingButtons.forEach((button) => {
   button.addEventListener("click", () => {
     ratingButtons.forEach((ratingButton) => ratingButton.classList.remove("is-selected"));
     button.classList.add("is-selected");
+    track("rating_selected", { rating: button.dataset.rating });
     showPlatformStep();
   });
 });
 
 backButton.addEventListener("click", showRatingStep);
+
+platformLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    const platform = link.classList.contains("platform-google") ? "google" : "facebook";
+    track("review_click", { platform });
+  });
+});
