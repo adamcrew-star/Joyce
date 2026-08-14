@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-029K018QFH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-029K018QFH', {
+      campaign_name: 'Kitsap Roof Pros x Kitsap Fair & Stampede Giveaway'
+    });
+  </script>
+  <!-- End Google tag (gtag.js) -->
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#102b3b">
@@ -28,30 +40,50 @@
 </head>
 <body>
   <div class="page">
-    <div class="roof-lines" aria-hidden="true"></div>
-
     <main class="giveaway-card">
-      <header class="brand">
-        <a href="https://kitsaproofpros.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Kitsap Roof Pros">
-          <img src="logo.svg" alt="Kitsap Roof Pros">
-        </a>
-      </header>
-
       <section id="entry-step" class="step">
-        <div class="prize-badge">
-          <span class="prize-badge-icon" aria-hidden="true">🎁</span>
-          <span>Kitsap Roof Pros Giveaway</span>
+        <div class="hero-panel">
+          <header class="brand">
+            <a href="https://kitsaproofpros.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Kitsap Roof Pros">
+              <img src="logo.svg" alt="Kitsap Roof Pros">
+            </a>
+            <span class="brand-x" aria-hidden="true">×</span>
+            <span class="fair-badge">
+              <img src="fair-logo-white.png" alt="Kitsap Fair &amp; Stampede">
+            </span>
+          </header>
+
+          <div class="prize-badge">
+            <span class="prize-badge-icon" aria-hidden="true">🎁</span>
+            <span>Kitsap Roof Pros Giveaway</span>
+          </div>
+
+          <h1>Win a <span class="highlight">Free Roof Makeover</span></h1>
+          <p class="intro">Enter for your chance to win a brand-new roof from your local Kitsap County team. It only takes a few seconds.</p>
+
+          <div class="countdown" id="countdown" data-deadline="2026-08-30T21:00:00-07:00" role="timer">
+            <span class="countdown-label">Entries close Sunday, Aug 30 · 9:00 PM</span>
+            <div class="countdown-units" aria-hidden="true">
+              <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-word">days</span></div>
+              <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-word">hrs</span></div>
+              <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-word">min</span></div>
+              <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-word">sec</span></div>
+            </div>
+            <span class="countdown-status" id="countdown-status" aria-live="polite"></span>
+          </div>
+
+          <ul class="perks" aria-label="Why enter">
+            <li><span class="perk-check" aria-hidden="true">✓</span> 100% free to enter</li>
+            <li><span class="perk-check" aria-hidden="true">✓</span> Local, family-owned crew</li>
+            <li><span class="perk-check" aria-hidden="true">✓</span> One winner drawn after Aug 30</li>
+          </ul>
+
+          <p class="announce-note">Winners will be announced via email/phone roughly one week after the fair/contest ends.</p>
         </div>
 
-        <h1>Win a <span class="highlight">Free Roof Makeover</span></h1>
-        <p class="intro">Enter for your chance to win a professional roof cleaning &amp; tune-up from your local Kitsap County team. Drop your details below — it only takes a few seconds.</p>
-
-        <ul class="perks" aria-label="Why enter">
-          <li><span class="perk-check" aria-hidden="true">✓</span> 100% free to enter</li>
-          <li><span class="perk-check" aria-hidden="true">✓</span> Local, family-owned crew</li>
-          <li><span class="perk-check" aria-hidden="true">✓</span> Winner drawn monthly</li>
-        </ul>
-
+        <div class="form-panel">
+        <h2 class="form-title">Enter to win</h2>
+        <p class="form-sub">Free to enter — just drop your details below.</p>
         <form id="giveaway-form" class="giveaway-form" novalidate>
           <div class="field">
             <label for="name">Name</label>
@@ -76,10 +108,11 @@
           <fieldset class="interests">
             <legend>Interested in</legend>
             <div class="interests-grid">
-              <label class="interest"><input type="checkbox" name="interest" value="Re-roof"><span>Re-roof</span></label>
-              <label class="interest"><input type="checkbox" name="interest" value="Roof Repair"><span>Roof Repair</span></label>
-              <label class="interest"><input type="checkbox" name="interest" value="General Construction"><span>General Construction</span></label>
-              <label class="interest"><input type="checkbox" name="interest" value="Windows"><span>Windows</span></label>
+              <label class="interest"><input type="checkbox" name="interest" value="Re-roof" data-tag="7138379"><span>Re-roof</span></label>
+              <label class="interest"><input type="checkbox" name="interest" value="Roof Repair" data-tag="7138380"><span>Roof Repair</span></label>
+              <label class="interest"><input type="checkbox" name="interest" value="General Construction" data-tag="7138381"><span>General Construction</span></label>
+              <label class="interest"><input type="checkbox" name="interest" value="Windows" data-tag="7138382"><span>Windows</span></label>
+              <label class="interest interest-wide"><input type="checkbox" name="interest" value="Do not contact (unless I'm a winner)" data-tag="7138383"><span>Do not contact (unless I'm a winner)</span></label>
             </div>
           </fieldset>
 
@@ -100,21 +133,40 @@
           </button>
 
           <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
-          <p class="fine-print">*Exclusions and limitations apply.</p>
+          <p class="fine-print">
+            *Exclusions and limitations apply. Open to legal residents of
+            Kitsap County, age 18+, who own and occupy a single-family home
+            within the Kitsap Roof Pros service area. Void where prohibited.
+            Giveaway ends 8/30. Prize includes standard architectural shingle
+            installation up to a maximum retail value of $15,000 (equivalent to
+            approximately 25 squares / 2,500 sq. ft. of roof surface).
+            Structural repairs, decking replacement, permits, and taxes are the
+            winner's responsibility.
+          </p>
         </form>
 
         <p class="privacy-note">
           <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3z"/></svg>
           We respect your privacy. No spam — unsubscribe anytime.
         </p>
+        </div>
       </section>
 
       <section id="success-step" class="step" hidden>
         <div class="success-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24"><path d="m5 13 4 4L19 7"/></svg>
         </div>
-        <h2 class="success-title">You're entered! 🎉</h2>
-        <p class="intro">Thanks for entering the Kitsap Roof Pros giveaway. We'll email you if you win — good luck! In the meantime, feel free to explore what we do.</p>
+        <h2 class="success-title">You're on your way to winning a roof! 🎉</h2>
+        <p class="intro">You're entered in the Kitsap Roof Pros giveaway — officially in the running for a free roof makeover.</p>
+
+        <ol class="next-steps" aria-label="What happens next">
+          <li><span class="step-num">1</span> <span class="step-text">Check your inbox for a confirmation from Kitsap Roof Pros.</span></li>
+          <li><span class="step-num">2</span> <span class="step-text">Entries close <strong>Sunday, Aug 30 at 9:00 PM</strong>.</span></li>
+          <li><span class="step-num">3</span> <span class="step-text">Winners are announced via email/phone <strong>roughly one week after</strong> the fair/contest ends — good luck!</span></li>
+        </ol>
+
+        <p class="share-line">Know a neighbor who needs a new roof? Send them to <strong>giveaway.kitsaproofpros.com</strong>.</p>
+
         <a class="primary-link" href="https://kitsaproofpros.com/" target="_blank" rel="noopener noreferrer">
           Visit kitsaproofpros.com
           <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></svg>
