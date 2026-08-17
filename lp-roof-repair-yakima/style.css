@@ -123,4 +123,8 @@
   .joyce-lp nav.menu{display:none}
   .joyce-lp .hero h1{font-size:34px}
   .joyce-lp footer.site .wrap{grid-template-columns:1fr}
+  .joyce-lp .hero .copy{text-align:center}
+  .joyce-lp .hero ul{width:fit-content;margin:0 auto 24px}
+  .joyce-lp .hero .cta-row{justify-content:center}
+  .joyce-lp .trust{justify-content:center}
 }
