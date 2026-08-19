@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+:root{
+    --green:#2eab2e; --green-d:#239823; --navy:#0e2233; --navy-2:#16314a;
+    --ink:#33424f; --muted:#6b7a86; --bg:#f4f8f5; --line:#e3eae5; --gold:#f5a623;
+  }
+.prp-lp *{box-sizing:border-box;margin:0;padding:0}
+.prp-lp{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+.prp-lp img{max-width:100%;height:auto;object-fit:contain}
+.prp-lp h1,.prp-lp h2,.prp-lp h3,.prp-lp h4,.prp-lp h5{font-family:'Montserrat',sans-serif;color:var(--navy);line-height:1.12}
+.prp-lp a{color:inherit;text-decoration:none}
+.prp-lp .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.prp-lp .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--green);color:#fff;font-weight:800;
+    font-family:'Montserrat';padding:14px 26px;border-radius:40px;border:0;cursor:pointer;font-size:15px;
+    box-shadow:0 6px 16px rgba(46,171,46,.32);transition:.2s;text-align:center}
+.prp-lp .btn:hover{background:var(--green-d);transform:translateY(-1px)}
+.prp-lp .btn::after,.prp-lp .btn::before,.prp-lp a.btn::after,.prp-lp a.btn::before,
+.prp-lp button.btn::after,.prp-lp button.btn::before{content:none!important;display:none!important}
+.prp-lp .btn.lg{padding:17px 34px;font-size:17px}
+.prp-lp .pill{display:inline-block;color:var(--green);font-family:'Montserrat';font-weight:800;letter-spacing:2px;
+    text-transform:uppercase;font-size:13px;margin-bottom:14px}
+
+/* Topbar */
+.prp-lp .topbar{background:var(--navy);color:#cfe0ee;font-size:13.5px}
+.prp-lp .topbar .wrap{display:flex;justify-content:flex-end;align-items:center;padding:10px 22px;gap:4px 24px;flex-wrap:wrap}
+.prp-lp .topbar .loc{text-align:center}
+.prp-lp .topbar .ph{text-align:center}
+.prp-lp .topbar .ph a{color:#fff;font-weight:700}
+
+/* Header */
+.prp-lp header.main{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 14px rgba(14,34,51,.05)}
+.prp-lp header.main .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 22px}
+.prp-lp .logo{display:flex;align-items:center;gap:12px}
+.prp-lp .logo img{height:52px;width:auto}
+.prp-lp .logo b{font-family:'Montserrat';font-weight:900;font-size:22px;color:var(--navy);letter-spacing:2px;line-height:1}
+.prp-lp .logo small{display:block;font-size:9.5px;letter-spacing:2px;color:var(--muted);font-weight:700}
+.prp-lp nav.menu{display:flex;gap:26px;align-items:center}
+.prp-lp nav.menu a{font-family:'Montserrat';font-weight:700;font-size:14.5px;color:var(--navy)}
+.prp-lp nav.menu a:hover{color:var(--green)}
+.prp-lp .mobile-call-hdr{display:none}
+
+/* Hero */
+.prp-lp .hero{position:relative;background:linear-gradient(180deg,#eef5ef,#e3eee6);overflow:hidden}
+.prp-lp .hero:before{content:"";position:absolute;inset:0;background:
+    linear-gradient(115deg,rgba(14,34,51,.93) 0 46%,rgba(14,34,51,.55) 60%,rgba(14,34,51,.25) 100%),
+    url('https://pierceroofpros.com/wp-content/uploads/2025/01/down-net_http20241217-177-8pc44m-scaled.jpg') center/cover}
+.prp-lp .hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;grid-template-rows:auto auto;gap:20px 40px;padding:56px 22px 64px;align-items:start}
+.prp-lp .hero .copy-top{grid-column:1;grid-row:1}
+.prp-lp .hero .copy-bottom{grid-column:1;grid-row:2}
+.prp-lp .hero .formcard{grid-column:2;grid-row:1/3;align-self:center}
+.prp-lp .hero .copy{color:#eaf2f9}
+.prp-lp .hero h1{color:#fff;font-size:46px;font-weight:900;text-transform:uppercase;letter-spacing:.5px}
+.prp-lp .hero h1 .acc{color:var(--green)}
+.prp-lp .hero p.sub{color:#d4e2ee;font-size:18px;margin:16px 0 22px;max-width:560px}
+.prp-lp .hero ul{list-style:none;display:grid;gap:9px;margin-bottom:24px}
+.prp-lp .hero ul li{display:flex;gap:10px;align-items:center;color:#eaf2f9;font-weight:600}
+.prp-lp .chk{width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff!important;display:flex!important;align-items:center!important;justify-content:center!important;font-size:13px;flex:none;line-height:1}
+.prp-lp .hero .cta-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.prp-lp .callbtn{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);
+    color:#fff;padding:13px 22px;border-radius:40px;font-family:'Montserrat';font-weight:800;font-size:16px}
+.prp-lp .callbtn:hover{background:rgba(255,255,255,.22)}
+.prp-lp .trust{display:flex;gap:26px;margin-top:26px;align-items:center;flex-wrap:wrap}
+.prp-lp .trust .t{display:flex;flex-direction:column;color:#eaf2f9}
+.prp-lp .trust .stars{color:#ffd000;font-size:17px;letter-spacing:2px;text-shadow:0 1px 4px rgba(0,0,0,.4)}
+.prp-lp .trust .t b{font-size:14px;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.4)}
+.prp-lp .trust .t span{font-size:12.5px;color:#fff;opacity:.9;text-shadow:0 1px 4px rgba(0,0,0,.4)}
+
+/* Promo badge */
+.prp-lp .promo-badge{display:inline-block;background:var(--gold);color:#3a2a00;font-family:'Montserrat';font-weight:800;
+    font-size:14px;padding:8px 18px;border-radius:30px;margin-bottom:16px;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+
+/* Form card */
+.prp-lp .formcard{background:#fff;border-radius:16px;box-shadow:0 24px 60px rgba(14,34,51,.30);padding:26px 24px}
+.prp-lp .formcard h3{font-size:20px;text-align:center;color:#fff;background:var(--green);
+    padding:18px 28px;margin:-26px -24px 16px;border-radius:16px 16px 0 0;font-weight:800}
+.prp-lp .formcard .fsub{text-align:center;color:var(--muted);font-size:13.5px;margin:6px 0 18px}
+.prp-lp .formcard label{font-size:12px;font-weight:700;color:var(--navy);display:block;margin:0 0 5px}
+.prp-lp .formcard input,.prp-lp .formcard select,.prp-lp .formcard textarea{width:100%;padding:12px 13px;border:1px solid #d8e1da;border-radius:9px;
+    font-family:inherit;font-size:14.5px;margin-bottom:13px;background:#fafdfb}
+.prp-lp .formcard input:focus,.prp-lp .formcard textarea:focus,.prp-lp .formcard select:focus{outline:2px solid var(--green);border-color:var(--green)}
+.prp-lp .formcard .btn{width:100%;justify-content:center}
+.prp-lp .formcard .fine{display:none}
+.prp-lp .formcard .gfield--type-consent{display:grid!important;grid-template-columns:16px 1fr!important;gap:6px!important;margin-top:8px!important;align-items:start!important}
+.prp-lp .formcard .gfield--type-consent>.gfield_label{display:none!important}
+.prp-lp .formcard .gfield--type-consent .ginput_container{display:contents!important}
+.prp-lp .formcard .gfield--type-consent input[type="checkbox"]{width:14px!important;height:14px!important;min-width:14px!important;margin-top:2px!important;grid-row:1/3!important;grid-column:1!important}
+.prp-lp .formcard .gfield--type-consent .gfield_consent_label{display:none!important}
+.prp-lp .formcard .gfield--type-consent .gfield_consent_description{grid-column:2!important;font-size:9.5px!important;line-height:1.35!important;color:#888!important;font-weight:400!important;margin:0!important;padding:0!important}
+.prp-lp .formcard .gform_wrapper .gform_title{display:none!important}
+.prp-lp .formcard .gform_wrapper .gform_heading{display:none!important}
+.prp-lp .formcard .gform_wrapper,.prp-lp .formcard .gform_wrapper *{box-sizing:border-box!important}
+.prp-lp .formcard .gform_wrapper{width:100%!important;max-width:100%!important;background:none!important;border:none!important;box-shadow:none!important;padding:0!important;margin:0!important}
+.prp-lp .formcard .gform_wrapper form{background:none!important;border:none!important;box-shadow:none!important;padding:0!important;margin:0!important}
+.prp-lp .formcard .gform_wrapper .gform_body,.prp-lp .formcard .gform_wrapper .gform_fields,
+.prp-lp .formcard .gform_wrapper .gfield,.prp-lp .formcard .gform_wrapper .ginput_container,
+.prp-lp .formcard .gform_wrapper .ginput_container input,
+.prp-lp .formcard .gform_wrapper .ginput_container select,
+.prp-lp .formcard .gform_wrapper .ginput_container textarea{width:100%!important;max-width:100%!important}
+.prp-lp .formcard .gform_wrapper input:not([type="submit"]):not([type="hidden"]):not([type="checkbox"]):not([type="radio"]),
+.prp-lp .formcard .gform_wrapper select,
+.prp-lp .formcard .gform_wrapper textarea{width:100%!important;padding:14px 16px!important;
+    border:1.5px solid #d8e1da!important;border-radius:10px!important;font-family:inherit!important;
+    font-size:15px!important;background:#fff!important;margin-bottom:4px!important}
+.prp-lp .formcard .gform_wrapper textarea{height:80px!important;min-height:80px!important;resize:vertical!important}
+.prp-lp .formcard .gform_wrapper input:focus,.prp-lp .formcard .gform_wrapper textarea:focus,
+.prp-lp .formcard .gform_wrapper select:focus{outline:2px solid var(--green)!important;border-color:var(--green)!important}
+.prp-lp .formcard .gform_wrapper .gfield_label{font-size:15px!important;font-weight:700!important;color:var(--navy)!important;margin-bottom:6px!important}
+.prp-lp .formcard .gform_wrapper .gfield{margin-bottom:10px!important;padding:0!important}
+.prp-lp .formcard .gform_wrapper .gform_fields{display:flex!important;flex-direction:column!important;gap:0!important;padding:0!important}
+.prp-lp .formcard .gform_wrapper .gform_footer,.prp-lp .formcard .gform_wrapper .gform_page_footer,
+.prp-lp .formcard .gform_wrapper .gform-footer{padding:10px 0 0!important;width:100%!important;display:block!important}
+.prp-lp .formcard .gform_wrapper input[type="submit"],
+.prp-lp .formcard .gform_wrapper button[type="submit"],
+.prp-lp .formcard .gform_wrapper .form__button,
+.prp-lp .formcard .gform_wrapper .gform-footer button,
+.prp-lp .formcard .gform_footer button{
+    width:100%!important;background:var(--green)!important;color:#fff!important;font-family:'Montserrat',sans-serif!important;
+    font-weight:800!important;font-size:16px!important;padding:16px 26px!important;border-radius:40px!important;border:0!important;
+    cursor:pointer!important;box-shadow:0 6px 16px rgba(46,171,46,.32)!important;display:block!important;text-align:center!important;
+    transition:.2s!important;letter-spacing:.5px!important}
+.prp-lp .formcard .gform_wrapper input[type="submit"]:hover,
+.prp-lp .formcard .gform_wrapper button[type="submit"]:hover,
+.prp-lp .formcard .gform_wrapper .form__button:hover,
+.prp-lp .formcard .gform_footer button:hover{
+    background:var(--green-d)!important;transform:translateY(-1px)!important}
+
+/* Mobile mid-page CTA - hidden on desktop */
+.prp-lp .mobile-cta-mid{display:none}
+.prp-lp .mobile-cta-mid .btn{justify-content:center;text-align:center;padding:14px 28px;font-size:15px}
+
+/* Stats strip */
+.prp-lp .strip{background:var(--green);color:#fff}
+.prp-lp .strip .wrap{display:flex;justify-content:space-around;gap:18px;padding:18px 22px;flex-wrap:wrap;text-align:center}
+.prp-lp .strip .s b{font-family:'Montserrat';font-size:22px;display:block}
+.prp-lp .strip .s span{font-size:13px;opacity:.92}
+
+/* Sections */
+.prp-lp section.pad{padding:64px 0}
+.prp-lp .sec-head{text-align:center;max-width:760px;margin:0 auto 42px}
+.prp-lp .sec-head h2{font-size:33px}
+.prp-lp .sec-head p{color:var(--muted);margin-top:12px;font-size:16px}
+
+/* Service cards grid */
+.prp-lp .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.prp-lp .card{position:relative;border-radius:14px;overflow:hidden;min-height:220px;
+    display:flex;flex-direction:column;justify-content:flex-end;padding:26px 22px;transition:.2s;
+    background-size:cover;background-position:center;background-repeat:no-repeat}
+.prp-lp .card::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(14,34,51,.82) 0%,rgba(14,34,51,.45) 100%);z-index:1}
+.prp-lp .card:hover{box-shadow:0 14px 34px rgba(14,34,51,.18);transform:translateY(-3px)}
+.prp-lp .card h3{font-size:18.5px;margin-bottom:8px;color:#fff;position:relative;z-index:2}
+.prp-lp .card p{font-size:14.5px;color:rgba(255,255,255,.88);position:relative;z-index:2}
+
+/* Why section */
+.prp-lp .why{background:var(--bg)}
+.prp-lp .why .row{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center}
+.prp-lp .why ul{list-style:none;display:grid;gap:16px;margin-top:8px}
+.prp-lp .why li{display:flex;gap:14px}
+.prp-lp .why li .chk{width:26px;height:26px;min-width:26px;min-height:26px;font-size:14px;display:flex!important;align-items:center!important;justify-content:center!important;color:#fff!important;line-height:1}
+.prp-lp .why li b{display:block;color:var(--navy);font-family:'Montserrat';font-size:16px}
+.prp-lp .why li span{font-size:14px;color:var(--ink);display:block;margin-top:2px}
+.prp-lp .google-badge{text-align:center;margin-top:16px}
+.prp-lp .google-badge img{display:block;margin:0 auto 6px}
+.prp-lp .google-rating{font-size:26px;font-family:'Montserrat',sans-serif}
+.prp-lp .google-rating b{margin-right:6px}
+.prp-lp .photo{border-radius:16px;min-height:340px;
+    background-image:linear-gradient(0deg,rgba(14,34,51,.12),rgba(14,34,51,.12)),
+    url('https://pierceroofpros.com/wp-content/uploads/2025/01/down-net_http20241217-177-8pc44m-scaled.jpg');
+    background-size:cover;background-position:center;background-repeat:no-repeat;
+    box-shadow:0 18px 44px rgba(14,34,51,.18)}
+
+/* Steps */
+.prp-lp .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.prp-lp .step{text-align:center;padding:10px}
+.prp-lp .step .n{width:58px;height:58px;border-radius:50%;background:var(--navy);color:#fff;font-family:'Montserrat';font-weight:900;
+    font-size:22px;display:grid;place-items:center;margin:0 auto 14px}
+.prp-lp .step h4{font-size:17px;margin-bottom:6px}
+.prp-lp .step p{font-size:15px;color:var(--muted)}
+
+/* Testimonials */
+.prp-lp .tg{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.prp-lp .quote{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px}
+.prp-lp .quote .stars{color:var(--gold);letter-spacing:2px;margin-bottom:10px}
+.prp-lp .quote p{font-size:14.5px;font-style:italic;color:var(--ink)}
+.prp-lp .quote .who{margin-top:14px;font-family:'Montserrat';font-weight:800;color:var(--navy);font-size:14px}
+.prp-lp .quote .who span{display:block;font-weight:500;color:var(--muted);font-size:12.5px}
+
+/* FAQ */
+.prp-lp .faq{max-width:840px;margin:0 auto}
+.prp-lp details{background:#fff;border:1px solid var(--line);border-radius:11px;padding:16px 20px;margin-bottom:12px}
+.prp-lp details summary{font-family:'Montserrat';font-weight:700;color:var(--navy);cursor:pointer;font-size:15.5px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.prp-lp details summary::-webkit-details-marker{display:none}
+.prp-lp details summary:after{content:"+";color:var(--green);font-size:22px;line-height:1;flex:none;margin-left:12px}
+.prp-lp details[open] summary:after{content:"\2013"}
+.prp-lp details p{margin-top:12px;font-size:14.5px;color:var(--ink)}
+
+/* Final CTA */
+.prp-lp .final{background:linear-gradient(120deg,var(--navy),var(--navy-2));color:#fff;text-align:center}
+.prp-lp .final h2{color:#fff;font-size:34px}
+.prp-lp .final p{color:#cfe0ee;max-width:620px;margin:14px auto 26px;font-size:17px}
+.prp-lp .final .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* Footer */
+.prp-lp footer.site{background:#0a1924;color:#9fb3c2;font-size:14px}
+.prp-lp footer.site .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;padding:50px 22px 30px}
+.prp-lp footer.site h5{color:#fff;font-size:15px;margin-bottom:14px;letter-spacing:1px}
+.prp-lp footer.site a{color:#9fb3c2}
+.prp-lp footer.site a:hover{color:var(--green)}
+.prp-lp footer.site li{list-style:none;margin-bottom:8px}
+.prp-lp .copyline{border-top:1px solid #1b2d3a;text-align:center;padding:16px;color:#6b8194;font-size:12.5px}
+
+/* Responsive */
+@media(max-width:900px){
+  .prp-lp .hero .wrap,.prp-lp .why .row{grid-template-columns:1fr}
+  .prp-lp .hero .copy-top{order:1;grid-column:1;grid-row:auto}
+  .prp-lp .hero .formcard{order:2;grid-column:1;grid-row:auto}
+  .prp-lp .hero .copy-bottom{order:3;grid-column:1;grid-row:auto}
+  .prp-lp .grid3,.prp-lp .tg{grid-template-columns:1fr}
+  .prp-lp .steps{grid-template-columns:1fr 1fr}
+  .prp-lp nav.menu{display:none}
+  .prp-lp .hero .copy{text-align:center;padding:8px 0}
+  .prp-lp .hero h1{font-size:33px;letter-spacing:0}
+  .prp-lp .hero p.sub{font-size:18px}
+  .prp-lp .hero ul{width:fit-content;margin:0 auto 24px}
+  .prp-lp .hero ul li{font-size:12.5px}
+  .prp-lp .hero .pill{font-size:10.5px;letter-spacing:1px}
+  .prp-lp .hero .cta-row{justify-content:center}
+  .prp-lp .cta-row a.btn{width:auto!important;display:inline-flex!important;max-width:fit-content;
+    padding:13px 22px!important;font-size:16px!important}
+  .prp-lp .cta-row .callbtn{background:var(--green);border:none;
+    color:#fff;box-shadow:0 6px 16px rgba(46,171,46,.32);width:auto!important;display:inline-flex!important}
+  .prp-lp .final .cta-row{justify-content:center}
+  .prp-lp .trust{justify-content:center}
+  .prp-lp footer.site .wrap{grid-template-columns:1fr}
+  .prp-lp .strip{display:none}
+  .prp-lp .topbar{display:none}
+  .prp-lp header.main .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:nowrap;padding:8px 16px}
+  .prp-lp header.main .logo img{max-width:120px;object-fit:contain;height:40px!important;width:auto!important}
+  .prp-lp .mobile-call-hdr{display:inline-flex;align-items:center;gap:6px;background:var(--green);color:#fff;
+    padding:10px 16px;border-radius:30px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;
+    text-decoration:none;box-shadow:0 6px 16px rgba(46,171,46,.32);flex-shrink:0}
+  .prp-lp .mobile-call-hdr svg{width:16px;height:16px;fill:#fff}
+  .prp-lp .mobile-cta-mid{display:block}
+}
+@media(max-width:600px){
+  .prp-lp .hero .wrap{padding:36px 16px 44px}
+  .prp-lp .formcard{padding:20px 16px}
+  .prp-lp .formcard h3{font-size:17px;margin:-20px -16px 16px;padding:16px}
+  .prp-lp .sec-head h2{font-size:26px}
+  .prp-lp .steps{grid-template-columns:1fr}
+  .prp-lp .final h2{font-size:26px}
+  .prp-lp section.pad{padding:44px 0}
+}
