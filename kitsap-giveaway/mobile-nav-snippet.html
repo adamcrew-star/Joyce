@@ -1,0 +1,143 @@
+<!-- ============================================================= -->
+<!-- Kitsap Roof Pros - Mobile header layout                       -->
+<!-- Moves the floating bottom Menu + phone controls into the      -->
+<!-- header so mobile reads: Menu (left) - centered logo -         -->
+<!-- phone (right). Paste as an HTML snippet (Site Wide Header).    -->
+<!-- Scoped to <=991px so desktop is untouched.                    -->
+<!-- ============================================================= -->
+<style id="krp-mobile-nav-css">
+@media (max-width: 991.98px){
+  header.site-header .site-header__inner{ position: relative !important; }
+
+  /* Menu pinned left, phone pinned right; logo stays centered. */
+  header.site-header .site-header__inner > .menu-toggle{
+    position: absolute !important;
+    left: 12px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    margin: 0 !important;
+    z-index: 5 !important;
+  }
+  header.site-header .site-header__inner > a[href^="tel"]{
+    position: absolute !important;
+    right: 12px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    margin: 0 !important;
+    z-index: 5 !important;
+  }
+
+  /* Keep the centered logo compact so it never collides with the sides. */
+  header.site-header .site-header__inner .site-header__branding img{
+    max-width: 132px !important;
+    height: auto !important;
+  }
+
+  /* Recolor menu + phone so they read on the white header. */
+  header.site-header .site-header__inner .menu-toggle,
+  header.site-header .site-header__inner .menu-toggle *,
+  header.site-header .site-header__inner a[href^="tel"],
+  header.site-header .site-header__inner a[href^="tel"] *{
+    color: #1c7a3f !important;
+  }
+  header.site-header .site-header__inner a[href^="tel"]{
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    font-size: 13px !important;
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+    gap: 6px !important;
+  }
+  header.site-header .site-header__inner a[href^="tel"] picture,
+  header.site-header .site-header__inner a[href^="tel"] img{
+    width: 26px !important;
+    height: 26px !important;
+  }
+  header.site-header .site-header__inner .menu-toggle{
+    background: transparent !important;
+    box-shadow: none !important;
+    font-size: 0 !important;            /* hide the "Menu" label */
+    gap: 0 !important;
+  }
+  /* Clean 3-line green hamburger. */
+  header.site-header .site-header__inner .menu-toggle .hamburger{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: 5px !important;
+  }
+  header.site-header .site-header__inner .hamburger__line,
+  header.site-header .site-header__inner .menu-toggle span{
+    display: block !important;
+    width: 26px !important;
+    height: 3px !important;
+    border-radius: 2px !important;
+    background: #1c7a3f !important;
+  }
+
+  /* Remove the now-empty floating bottom bar. */
+  header.site-header + div{ display: none !important; }
+
+  /* Insurance-step cards: full width on mobile (no narrow centered column). */
+  .process .col-process{
+    width: 100% !important;
+    max-width: 100% !important;
+    align-self: stretch !important;
+  }
+}
+
+/* Desktop keeps its own nav; hide the relocated mobile controls. */
+@media (min-width: 992px){
+  header.site-header .site-header__inner > .menu-toggle,
+  header.site-header .site-header__inner > a[href^="tel"]{ display: none !important; }
+
+  /* Keep the logo fully visible in the header (was clipping at the top). */
+  header.site-header .site-header__inner{ align-items: center !important; }
+  header.site-header .site-header__inner > a[href="https://kitsaproofpros.com/"]{
+    display: flex !important;
+    align-items: center !important;
+  }
+  header.site-header .site-header__inner > a[href="https://kitsaproofpros.com/"] img{
+    max-height: 56px !important;
+    height: auto !important;
+    width: auto !important;
+    object-fit: contain !important;
+  }
+}
+</style>
+<script>
+(function(){
+  function init(){
+    var header = document.querySelector('header.site-header, #masthead');
+    if(!header) return;
+    var inner = header.querySelector('.site-header__inner') || header;
+    var bar = header.nextElementSibling;
+    if(!bar) return;
+
+    var menuBtn = bar.querySelector('.menu-toggle') || bar.querySelector('button');
+    var phone = bar.querySelector('a[href^="tel"]');
+
+    // Relocate the mobile controls into the header row (once).
+    if(menuBtn && menuBtn.parentElement !== inner){ inner.insertBefore(menuBtn, inner.firstChild); }
+    if(phone && phone.parentElement !== inner){ inner.appendChild(phone); }
+
+    // Show "Call Now" instead of the phone number (keep the icon + tel link).
+    if(phone){
+      var replaced = false;
+      Array.prototype.forEach.call(phone.childNodes, function(n){
+        if(n.nodeType === 3 && n.textContent.trim()){
+          n.textContent = replaced ? '' : ' Call Now';
+          replaced = true;
+        }
+      });
+    }
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>

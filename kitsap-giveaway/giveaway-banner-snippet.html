@@ -1,0 +1,126 @@
+<!-- ============================================================= -->
+<!-- Kitsap Roof Pros — Giveaway homepage banner                   -->
+<!-- Paste this whole block into your homepage (Custom HTML block) -->
+<!-- or a Header/Footer-scripts plugin (e.g. WPCode). Scoped so    -->
+<!-- it won't affect the rest of your theme.                       -->
+<!-- ============================================================= -->
+<div id="krp-giveaway-banner" role="region" aria-label="Roof giveaway announcement">
+  <a class="krp-gb-link" href="https://giveaway.kitsaproofpros.com/" target="_blank" rel="noopener noreferrer">
+    <span class="krp-gb-badge">🎁 GIVEAWAY</span>
+    <span class="krp-gb-text">
+      <strong>WIN A FREE ROOF!</strong>
+      <span class="krp-gb-sub">Kitsap Roof Pros &times; Kitsap Fair &amp; Stampede &middot; Enter by Aug 30</span>
+    </span>
+    <span class="krp-gb-cta">Enter now &rarr;</span>
+  </a>
+  <button type="button" class="krp-gb-close" aria-label="Dismiss giveaway banner">&times;</button>
+</div>
+
+<style>
+  #krp-giveaway-banner{
+    display:flex;align-items:center;justify-content:center;gap:12px;
+    position:relative;width:100%;box-sizing:border-box;
+    padding:10px 44px 10px 16px;
+    background:
+      linear-gradient(90deg,rgba(20,80,25,.88),rgba(67,176,42,.82)),
+      url('https://giveaway.kitsaproofpros.com/fair-bg.jpg') center/cover no-repeat;
+    color:#fff;font-family:'Inter',Arial,Helvetica,sans-serif;
+    text-shadow:0 1px 6px rgba(0,0,0,.35);
+    box-shadow:0 2px 10px rgba(0,0,0,.18);z-index:9999;
+  }
+  #krp-giveaway-banner.krp-gb-hidden{display:none;}
+  #krp-giveaway-banner .krp-gb-link{
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;
+    text-decoration:none;color:#fff;
+  }
+  #krp-giveaway-banner .krp-gb-badge{
+    font-weight:800;font-size:12px;letter-spacing:.06em;
+    background:rgba(255,255,255,.18);border-radius:999px;padding:4px 12px;white-space:nowrap;
+  }
+  #krp-giveaway-banner .krp-gb-text{display:flex;flex-direction:column;line-height:1.25;}
+  #krp-giveaway-banner .krp-gb-text strong{font-size:16px;font-weight:800;}
+  #krp-giveaway-banner .krp-gb-sub{font-size:12.5px;opacity:.92;}
+  #krp-giveaway-banner .krp-gb-cta{
+    font-weight:700;font-size:14px;background:#fff;color:#348c20;
+    border-radius:999px;padding:7px 16px;white-space:nowrap;
+  }
+  #krp-giveaway-banner .krp-gb-close{
+    position:absolute;top:50%;right:12px;transform:translateY(-50%);
+    background:transparent;border:0;color:#fff;font-size:24px;line-height:1;
+    cursor:pointer;opacity:.85;padding:0 4px;
+  }
+  #krp-giveaway-banner .krp-gb-close:hover{opacity:1;}
+  @media (max-width:640px){
+    #krp-giveaway-banner{padding:14px 16px 16px;}
+    #krp-giveaway-banner .krp-gb-link{
+      flex-direction:column;gap:8px;width:100%;text-align:center;
+    }
+    #krp-giveaway-banner .krp-gb-badge{font-size:11px;padding:4px 12px;}
+    #krp-giveaway-banner .krp-gb-text{align-items:center;}
+    #krp-giveaway-banner .krp-gb-text strong{font-size:21px;letter-spacing:.01em;}
+    #krp-giveaway-banner .krp-gb-sub{font-size:12.5px;margin-top:2px;}
+    #krp-giveaway-banner .krp-gb-cta{
+      font-size:15px;padding:11px 22px;margin-top:4px;width:auto;
+    }
+    #krp-giveaway-banner .krp-gb-close{top:8px;right:10px;transform:none;font-size:26px;}
+  }
+</style>
+
+<script>
+  (function(){
+    function init(){
+      var banner = document.getElementById('krp-giveaway-banner');
+      if(!banner) return;
+
+      // The site header is position:fixed with a hardcoded top offset, so it
+      // floats over the banner. Keep the header pinned directly below the banner
+      // at rest, and let it slide up to the very top of the page as you scroll.
+      var header = document.querySelector('#masthead, header.site-header');
+      // The homepage hero reserves ~132px padding-top to clear the old
+      // top:40px fixed header. The header is shorter than that, leaving a
+      // white gap below it, so tighten the clearance to the real header height.
+      var isHome = location.pathname === '/' || location.pathname === '';
+      var heroSection = isHome ? document.querySelector('main > section') : null;
+      function syncHeader(){
+        if(!header) return;
+        var top = 0;
+        if(!banner.classList.contains('krp-gb-hidden')){
+          top = Math.max(0, Math.round(banner.getBoundingClientRect().bottom));
+        }
+        header.style.setProperty('top', top + 'px', 'important');
+        if(heroSection){
+          heroSection.style.setProperty('padding-top', (header.offsetHeight + 8) + 'px', 'important');
+        }
+      }
+
+      function hideBanner(){
+        banner.classList.add('krp-gb-hidden');
+        syncHeader();
+      }
+
+      // Hide after the giveaway ends (Aug 30, 2026 9:00 PM PT)
+      if(Date.now() > new Date('2026-08-30T21:00:00-07:00').getTime()){
+        hideBanner(); return;
+      }
+      // Respect a prior dismissal for this browser
+      try{ if(localStorage.getItem('krpGiveawayBannerClosed')==='1'){ hideBanner(); return; } }catch(e){}
+
+      banner.querySelector('.krp-gb-close').addEventListener('click', function(){
+        hideBanner();
+        try{ localStorage.setItem('krpGiveawayBannerClosed','1'); }catch(e){}
+      });
+
+      syncHeader();
+      window.addEventListener('scroll', syncHeader, {passive:true});
+      window.addEventListener('resize', syncHeader);
+      window.addEventListener('load', syncHeader);
+    }
+
+    // The snippet may load in <head> (before the banner exists), so defer.
+    if(document.readyState === 'loading'){
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>

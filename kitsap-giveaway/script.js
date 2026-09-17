@@ -13,6 +13,8 @@ const MAILCHIMP = {
   host: "kitsaproofpros.us14.list-manage.com",
   u: "1ca48ac180bdb25983e977ee1",
   id: "364af29c18",
+  // Tag added to every entry; the branded welcome automation triggers on it.
+  entryTag: "7138385",
 };
 
 const form = document.querySelector("#giveaway-form");
@@ -88,9 +90,11 @@ function validate() {
  */
 function submitToMailchimp() {
   const { first, last } = splitName(fields.name.value);
-  const interests = Array.from(document.querySelectorAll('input[name="interest"]:checked'))
-    .map((box) => box.value)
-    .join(", ");
+  const checked = Array.from(document.querySelectorAll('input[name="interest"]:checked'));
+  const interests = checked.map((box) => box.value).join(", ");
+  const tags = [MAILCHIMP.entryTag]
+    .concat(checked.map((box) => box.dataset.tag).filter(Boolean))
+    .join(",");
 
   const params = new URLSearchParams();
   params.set("EMAIL", fields.email.value.trim());
@@ -99,6 +103,8 @@ function submitToMailchimp() {
   params.set("ADDR", fields.address.value.trim());
   params.set("PHONE", fields.phone.value.trim());
   params.set("INTEREST", interests);
+  // Apply a Mailchimp tag per selected checkbox (comma-separated tag IDs).
+  params.set("tags", tags);
   // Mailchimp bot-detection honeypot: named b_<u>_<id>, must stay empty.
   params.set("b_" + MAILCHIMP.u + "_" + MAILCHIMP.id, honeypot.value);
 
@@ -115,7 +121,14 @@ function submitToMailchimp() {
 function showSuccess() {
   entryStep.hidden = true;
   successStep.hidden = false;
+  document.body.classList.add("entered");
   successStep.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+  if (typeof window.gtag === "function") {
+    window.gtag("event", "giveaway_entry_submitted", {
+      campaign_name: "Kitsap Roof Pros x Kitsap Fair & Stampede Giveaway",
+    });
+  }
 }
 
 form.addEventListener("submit", async (event) => {
@@ -142,3 +155,56 @@ requiredText.forEach((input) => {
     if (input.classList.contains("invalid")) input.classList.remove("invalid");
   });
 });
+
+/*
+ * Countdown to the entry deadline (read from #countdown[data-deadline]).
+ * When the deadline passes, the form is closed and an "ended" message shown.
+ */
+(function initCountdown() {
+  const countdown = document.querySelector("#countdown");
+  if (!countdown) return;
+
+  const deadline = new Date(countdown.dataset.deadline);
+  if (Number.isNaN(deadline.getTime())) return;
+
+  const parts = {
+    days: document.querySelector("#cd-days"),
+    hours: document.querySelector("#cd-hours"),
+    mins: document.querySelector("#cd-mins"),
+    secs: document.querySelector("#cd-secs"),
+  };
+  const statusEl = document.querySelector("#countdown-status");
+  const pad = (n) => String(n).padStart(2, "0");
+  let timer = null;
+
+  function closeGiveaway() {
+    countdown.classList.add("ended");
+    if (statusEl) statusEl.textContent = "This giveaway has ended. Thanks for your interest!";
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitLabel.textContent = "Entries closed";
+    }
+    form.querySelectorAll("input, button").forEach((el) => {
+      el.disabled = true;
+    });
+  }
+
+  function tick() {
+    const remaining = deadline.getTime() - Date.now();
+    if (remaining <= 0) {
+      parts.days.textContent = "0";
+      parts.hours.textContent = parts.mins.textContent = parts.secs.textContent = "00";
+      closeGiveaway();
+      window.clearInterval(timer);
+      return;
+    }
+    const totalSeconds = Math.floor(remaining / 1000);
+    parts.days.textContent = String(Math.floor(totalSeconds / 86400));
+    parts.hours.textContent = pad(Math.floor((totalSeconds % 86400) / 3600));
+    parts.mins.textContent = pad(Math.floor((totalSeconds % 3600) / 60));
+    parts.secs.textContent = pad(totalSeconds % 60);
+  }
+
+  tick();
+  timer = window.setInterval(tick, 1000);
+})();
